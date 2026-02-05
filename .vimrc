@@ -1,5 +1,5 @@
 set hlsearch
-set mouse=a
+set mouse=v
 
 " General netrw behavior
 let g:netrw_banner = 0
