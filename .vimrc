@@ -15,3 +15,6 @@ augroup ProjectDrawer
   " Open Netrw, then jump to the blank window on the right
   autocmd VimEnter * Lexplore | wincmd l
 augroup END
+
+syntax on
+filetype plugin indent on
