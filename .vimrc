@@ -1,6 +1,10 @@
 set hlsearch
 set mouse=v
 
+" Lengths
+set tabstop=4
+set shiftwidth=4
+
 " General netrw behavior
 "let g:netrw_banner = 0
 "let g:netrw_liststyle = 3
