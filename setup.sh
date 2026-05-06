@@ -15,3 +15,8 @@ echo "Symbolic links created successfully."
 
 # Git related config
 git config --global core.editor "vim"
+
+# Bark sync
+echo "# Bark sync" >> ~/.bashrc
+echo "" >> ~/.bashrc
+echo "export BARK_SYNC_DIR=~/bark-sync" >> ~/.bashrc
