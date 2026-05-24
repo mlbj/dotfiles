@@ -18,3 +18,12 @@ set mouse=v
 
 syntax on
 filetype plugin indent on
+
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : (col('.') > 1 && getline('.')[col('-2')] =~ '\k' ? "\<C-n>" : "\<Tab>")
+
+set autoread
