@@ -27,3 +27,6 @@ set expandtab
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : (col('.') > 1 && getline('.')[col('-2')] =~ '\k' ? "\<C-n>" : "\<Tab>")
 
 set autoread
+
+" Toggle column highlight
+set colorcolumn=72
