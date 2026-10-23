@@ -7,8 +7,8 @@ mkdir -p ~/.config/alacritty
 mkdir -p ~/.config/kitty
 
 # Link files 
-ln -sf "$DOTFILES/alacritty.toml" ~/.config/alacritty/alacritty.toml
-ln -sf "$DOTFILES/.vimrc" ~/.vimrc
+ln -sf "$DOTFILES/alacritty/alacritty.toml" ~/.config/alacritty/alacritty.toml
+ln -sf "$DOTFILES/vim/.vimrc" ~/.vimrc
 ln -sf "$DOTFILES/kitty/kitty.conf" ~/.config/kitty/kitty.conf
 
 echo "Symbolic links created successfully."
