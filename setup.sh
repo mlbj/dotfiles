@@ -8,8 +8,8 @@ mkdir -p ~/.config/kitty
 mkdir -p ~/.config/nvim
 
 # Link files 
-ln -sf "$DOTFILES/alacritty.toml" ~/.config/alacritty/alacritty.toml
-ln -sf "$DOTFILES/.vimrc" ~/.vimrc
+ln -sf "$DOTFILES/alacritty/alacritty.toml" ~/.config/alacritty/alacritty.toml
+ln -sf "$DOTFILES/vim/.vimrc" ~/.vimrc
 ln -sf "$DOTFILES/kitty/kitty.conf" ~/.config/kitty/kitty.conf
 ln -sf "$DOTFILES/nvim/init.vim" ~/.config/nvim/init.vim
 
