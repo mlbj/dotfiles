@@ -19,5 +19,16 @@ ln -sf "$DOTFILES/nvim/init.lua" ~/.config/nvim/init.lua
 
 echo "Symbolic links created successfully."
 
+# Source the versioned bashrc appends from ~/.bashrc, once
+if ! grep -qF '# >>> dotfiles bashrc.append >>>' ~/.bashrc 2>/dev/null; then
+    cat >> ~/.bashrc <<'EOF'
+
+# >>> dotfiles bashrc.append >>>
+[ -r "$HOME/dotfiles/bash/bashrc.append" ] && . "$HOME/dotfiles/bash/bashrc.append"
+# <<< dotfiles bashrc.append <<<
+EOF
+    echo "Hooked bash/bashrc.append into ~/.bashrc."
+fi
+
 # Git related config
 git config --global core.editor "vim"
