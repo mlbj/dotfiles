@@ -1,0 +1,44 @@
+# Appends to ~/.bashrc, versioned here so they work on any machine.
+# setup.sh adds the line at the end of ~/.bashrc that sources this file.
+# Guard anything tool-specific, so a machine without it skips the block.
+
+# PATH helpers: skip missing directories, never add one twice.
+path_prepend() {
+    [ -d "$1" ] || return 0
+    case ":$PATH:" in
+        *":$1:"*) ;;
+        *) PATH="$1:$PATH" ;;
+    esac
+}
+
+path_append() {
+    [ -d "$1" ] || return 0
+    case ":$PATH:" in
+        *":$1:"*) ;;
+        *) PATH="$PATH:$1" ;;
+    esac
+}
+
+path_prepend "$HOME/.local/bin"
+path_prepend "$HOME/.local/opt/nvim-linux-x86_64/bin"
+
+export BARK_SYNC_DIR="$HOME/bark-sync"
+export BARK_NOTES_DIR="$HOME/bark-sync/notes"
+
+# rust
+[ -r "$HOME/.cargo/env" ] && \. "$HOME/.cargo/env"
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+if command -v kitty >/dev/null 2>&1; then
+    alias ssh="kitty +kitten ssh"
+    alias icat="kitty +kitten icat"
+fi
+
+export PATH
+
+# Anything for this machine only, or too private to version, goes here.
+[ -r "$HOME/.bashrc.local" ] && \. "$HOME/.bashrc.local"
