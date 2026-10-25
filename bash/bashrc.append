@@ -21,6 +21,7 @@ path_append() {
 
 path_prepend "$HOME/.local/bin"
 path_prepend "$HOME/.local/opt/nvim-linux-x86_64/bin"
+path_prepend "$HOME/.config/emacs/bin"
 
 export BARK_SYNC_DIR="$HOME/bark-sync"
 export BARK_NOTES_DIR="$HOME/bark-sync/notes"
@@ -42,3 +43,5 @@ export PATH
 
 # Anything for this machine only, or too private to version, goes here.
 [ -r "$HOME/.bashrc.local" ] && \. "$HOME/.bashrc.local"
+
+alias emacs='emacs -nw'
