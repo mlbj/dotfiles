@@ -29,4 +29,4 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : (col('.') > 1 && getline('.')[co
 set autoread
 
 " Toggle column highlight
-set colorcolumn=72
+" set colorcolumn=72
